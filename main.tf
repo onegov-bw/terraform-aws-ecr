@@ -107,7 +107,7 @@ data "aws_iam_policy_document" "repository" {
 # Repository
 ################################################################################
 
-resource "aws_ecr_repository" "this" {
+resource "aws_ecr_repository" "this[0]" {
   count = local.create_private_repository ? 1 : 0
 
   name                 = var.repository_name
